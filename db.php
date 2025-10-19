@@ -1,10 +1,11 @@
 <?php
-$host = 'localhost';
-$db = 'project_full_db';
-$user = 'root'; // Altere conforme necessário
-$pass = null;   // Altere conforme necessário
+$host = getenv('MYSQLHOST') ?: 'localhost';
+$db = getenv('MYSQLDATABASE') ?: 'project_full_db';
+$user = getenv('MYSQLUSER') ?: 'root';
+$pass = getenv('MYSQLPASSWORD') ?: null;
+$port = getenv('MYSQLPORT') ?: 3306;
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 // Verifica conexão
 if ($conn->connect_error) {

@@ -1,0 +1,13 @@
+{
+    "name": "kauai/portifolio2025-backend",
+    "description": "Backend PHP para sistema de eventos e portfólio",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'Composer install completed'"
+        ]
+    }
+}
