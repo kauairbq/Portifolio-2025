@@ -1,0 +1,178 @@
+...existing content...
+
+<section id="feedback-section">
+  <h2>Feedback e Sugestões</h2>
+  <p>Gostaria de ouvir sua opinião! Utilize o formulário abaixo para enviar seus comentários e sugestões.</p>
+  <button id="open-feedback-modal">Enviar Feedback</button>
+</section>
+
+<div id="feedback-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3>Deixe seu Feedback</h3>
+    <form id="feedback-form">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  #feedback-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: box-shadow 0.3s ease; /* Optional: smooth transition for hover effect */
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the section */
+    max-width: 800px; /* Optional: set a maximum width */
+  }
+
+  #feedback-section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Optional: enhance shadow on hover */
+  }
+
+  #feedback-section h2 {
+    margin-bottom: 10px;
+  }
+
+  #feedback-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+    position: relative;
+  }
+
+  /* The Close Button */
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #feedback-form label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  #feedback-form input[type=text],
+  #feedback-form input[type=email],
+  #feedback-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+  }
+
+  #feedback-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  #feedback-form button:hover {
+    background-color: #3e8e41;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById("feedback-modal");
+    const openBtn = document.getElementById("open-feedback-modal");
+    const closeBtn = document.querySelector(".close-button");
+    const form = document.getElementById("feedback-form");
+
+    openBtn.addEventListener("click", function() {
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const formData = new FormData(form);
+
+      fetch('submit_feedback.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Feedback enviado com sucesso!');
+          modal.style.display = "none";
+          form.reset(); // Clear the form
+        } else {
+          alert('Ocorreu um erro ao enviar o feedback.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Ocorreu um erro ao enviar o feedback.');
+      });
+    });
+  });
+</script>

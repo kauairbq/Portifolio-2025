@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Projeto 1 - Frontend Showcase",
+        "description": "Showcases a frontend project with interactive elements.",
+        "image": "uploads\/projeto1.jpg"
+    },
+    {
+        "title": "Demonstração de Habilidade em Backend",
+        "description": "Demonstrates backend skills with a simulation feature.",
+        "image": "uploads\/projeto2.jpg"
+    },
+    {
+        "title": "Projeto 3 - Full Stack Application",
+        "description": "A task manager with functionalities to manage tasks.",
+        "image": "uploads\/projeto3.jpg"
+    },
+    {
+        "name": "calculadora JS",
+        "description": "Uma calculadora feita em Js",
+        "image": "uploads\/proj_683e53178bd881.90373530.jpg"
+    }
+]

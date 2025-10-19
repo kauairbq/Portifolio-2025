@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Administração</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_php.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Página de Administração</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="admin.php">Administração</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Adicionar Novo Projeto</h2>
+        <form action="upload_project.php" method="POST" enctype="multipart/form-data">
+            <label for="project_name">Nome do Projeto:</label>
+            <input type="text" id="project_name" name="project_name" required>
+
+            <label for="project_description">Descrição do Projeto:</label>
+            <textarea id="project_description" name="project_description" required></textarea>
+
+            <label for="project_image">Imagem do Projeto (opcional):</label>
+            <input type="file" id="project_image" name="project_image">
+
+            <button type="submit">Adicionar Projeto</button>
+        </form>
+    </section>
+
+    <section class="container">
+        <h2>Projetos Adicionados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Nome do Projeto</th>
+                    <th>Descrição do Projeto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Nenhum projeto adicionado ainda.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

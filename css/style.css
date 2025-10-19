@@ -1,0 +1,459 @@
+:root {
+    --dark-gray: #343a40;
+    /* Cinza escuro */
+    --transition-duration: 0.3s;
+    /* Duração da transição */
+    --light-gray: #f8f9fa;
+    /* Cinza claro */
+    --primary-color: #007bff;
+    /* Cor primária */
+}
+
+#home img {
+    width: 200px;
+    /* Largura da imagem */
+    height: 200px;
+    /* Altura da imagem */
+    object-fit: cover;
+    /* Ajuste da imagem para cobrir o contêiner */
+    border-radius: 50%;
+    /* Bordas arredondadas para formar um círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para a imagem */
+    transition: transform var(--transition-duration);
+    /* Transição suave para transformações */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Rolagem suave para navegação na página */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Fonte do corpo do texto */
+    margin: 0;
+    /* Margem zero */
+    padding: 0;
+    /* Preenchimento zero */
+    background-color: var(--light-gray);
+    /* Cor de fundo usando variável CSS */
+    color: var(--dark-gray);
+    /* Cor do texto usando variável CSS */
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    /* Transição suave para mudanças de cor */
+}
+
+section {
+    padding: 40px 0;
+    /* Preenchimento superior e inferior */
+}
+
+/* Estilos da Seção de Cabeçalho da Home */
+#home {
+    text-align: center;
+    /* Centralizar texto */
+    position: relative;
+    /* Adicionar posicionamento relativo */
+    overflow: hidden;
+    /* Ocultar transbordamento */
+}
+
+#home img:hover {
+    transform: scale(1.00);
+    /* Escala da imagem ao passar o mouse */
+}
+
+.profile-image-container {
+    /* Container para a imagem de perfil com efeito ARGB */
+    position: relative;
+    /* Posicionamento relativo */
+    display: inline-block;
+    /* Exibição em bloco inline */
+}
+
+.profile-image {
+    position: relative;
+    /* Posicionamento relativo */
+    z-index: 2;
+    /* Certifique-se de que a imagem esteja acima do efeito */
+    border: 5px solid white;
+    /* Opcional: Adicionar uma borda à imagem */
+}
+
+.argb-effect {
+    position: absolute;
+    /* Posicionamento absoluto */
+    top: -10px;
+    /* Posição superior */
+    left: -10px;
+    /* Posição à esquerda */
+    right: -10px;
+    /* Posição à direita */
+    bottom: -10px;
+    /* Posição inferior */
+    background: linear-gradient(45deg, #00ffff, #0000ff, #9400d3, #ff00ff, #ff0000, #ffff00, #00ff00, #00ffff);
+    /* Gradiente de fundo */
+    background-size: 400% 400%;
+    /* Tamanho do fundo */
+    z-index: 1;
+    /* Colocar o efeito atrás da imagem */
+    border-radius: 50%;
+    /* Bordas arredondadas */
+    animation: gradientAnimation 15s infinite alternate;
+    /* Animação de gradiente */
+    opacity: 0.8;
+    /* Transparência */
+    filter: blur(20px);
+    /* Desfoque do fundo */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Posição inicial do fundo */
+    }
+
+    100% {
+        background-position: 100% 50%;
+        /* Posição final do fundo */
+    }
+}
+
+/* Service details styling */
+.service-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--dark-gray);
+}
+
+.service-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-details p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+/* Additional styles for the services menu */
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-gray);
+}
+
+#social {
+    background-color: var(--light-gray);
+    /* Cor de fundo cinza claro */
+    padding: 20px 0;
+    /* Preenchimento superior e inferior */
+}
+
+#social img {
+    transition: transform var(--transition-duration);
+    /* Transição suave para transformações */
+}
+
+#social img:hover {
+    transform: scale(1.2);
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    transition: background-color var(--transition-duration);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    transition: color var(--transition-duration);
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color var(--transition-duration), border-color var(--transition-duration), transform var(--transition-duration);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition-duration);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* Progress Bar Styles */
+.progress {
+    background-color: var(--light-gray);
+    border-radius: 0.25rem;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    transition: width var(--transition-duration);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-gray);
+    color: white;
+    text-align: center;
+    padding: 40px 0 20px 0;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.3);
+    /* Sombreado na margem superior */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Contact Modal Styles */
+.modal-content {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
+
+/* Animation Keyframes (Optional - for more advanced animations) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* High Contrast Mode Styles */
+body.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+body.high-contrast .navbar {
+    background-color: #333;
+}
+
+body.high-contrast .navbar-dark .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+body.high-contrast .card {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.high-contrast .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+}
+
+body.high-contrast .progress {
+    background-color: #555;
+}
+
+body.high-contrast .progress-bar {
+    background-color: #ffc107;
+    color: black;
+}
+
+/* Feedback Styles */
+.mt-4 {
+    margin-top: 1rem !important;
+    /* For consistent spacing */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    /* Padding inside the box */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for depth */
+    background-color: #fff;
+    /* White background */
+    max-width: 800px;
+    /* Set a maximum width */
+}
+
+/* Adjust the container to match freelancer margins */
+@media (min-width: 768px) {
+    .mt-4 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Style the feedback form elements for better appearance */
+#feedbackForm .form-label {
+    font-weight: bold;
+    /* Make labels stand out */
+}
+
+#feedbackForm .form-control {
+    border-radius: 5px;
+    /* Slightly rounded form fields */
+    margin-bottom: 10px;
+    /* Space out form fields */
+}
+
+/* Style the feedback message area */
+#feedback-message {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Certificates Section Styles */
+#certificates {
+    padding: 20px;
+}
+
+#certificate-filter {
+    margin-bottom: 20px;
+}
+
+#certificate-list .card {
+    transition: transform 0.2s;
+}
+
+#certificate-list .card:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox Styles */
+#lightbox {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#simulacao-orcamento {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+}
+
+#simulacao-orcamento form {
+    display: flex;
+    flex-direction: column;
+}
+
+#simulacao-orcamento label {
+    margin-top: 10px;
+}
+
+#simulacao-orcamento input,
+#simulacao-orcamento select,
+#simulacao-orcamento textarea,
+#simulacao-orcamento button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+#resultado-simulacao {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--light-gray);
+}
+
+/* Estilos para o FAQ */
+#faq {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--light-gray);
+}

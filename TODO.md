@@ -1,0 +1,4 @@
+- [x] Modificar index_eventos.html para verificar sessão no navbar
+- [x] Modificar events.php para verificar sessão no navbar
+- [x] Testar login e verificar se navbar muda
+- [x] Testar logout e verificar se volta ao estado original

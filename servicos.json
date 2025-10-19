@@ -1,0 +1,29 @@
+{
+  "servicos": [
+    {
+      "titulo": "Desenvolvimento web",
+      "descricao": "Construo sites e aplicações web responsivas e de alto desempenho.",
+      "imagem": "imagens/dw.jpg"
+    },
+    {
+      "titulo": "Design de UX/UI",
+      "descricao": "Crio designs intuitivos e experiências de utilizador envolventes.",
+      "imagem": "imagens/uiux.jpg"
+    },
+    {
+      "titulo": "Desenvolvimento Mobile",
+      "descricao": "Desenvolvo aplicações móveis nativas e multiplataforma.",
+      "imagem": "imagens/dm.jpg"
+    },
+    {
+      "titulo": "Integração back-end",
+      "descricao": "Implemento soluções back-end robustas e seguras.",
+      "imagem": "imagens/backend.jpg"
+    },
+    {
+      "titulo": "Projeto Computador Gamer/Estudo",
+      "descricao": "Projeto de um computador gamer para jogos pesados e estudo.",
+      "imagem": "imagens/stg.jpg"
+    }
+  ]
+}

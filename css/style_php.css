@@ -1,0 +1,151 @@
+:root {
+    --dark-gray: #343a40; /* Cinza escuro */
+    --light-gray: #f8f9fa; /* Cinza claro */
+    --primary-color: #007bff; /* Cor primária */
+}
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset básico para garantir uma base consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    font-family: "Lato", sans-serif;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--light-gray);
+    padding: 1rem;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Conteúdo principal */
+main {
+    padding: 2rem 1rem;
+}
+
+h1, h2, h3 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Formulários */
+form {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+}
+
+label {
+    margin-top: 10px;
+    color: var(--dark-gray);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--dark-gray);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--dark-gray);
+    transform: scale(1.05);
+}
+
+/* Tabela de Projetos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+}
+
+td {
+    background-color: #fff;
+}
+
+tr:hover {
+    background-color: var(--light-gray);
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}

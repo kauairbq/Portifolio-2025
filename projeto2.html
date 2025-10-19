@@ -1,0 +1,114 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Habilidade em Backend</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #B0E0E6, #ADD8E6); 
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #2c3e50; 
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #3498db; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #2980b9; 
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 600px; 
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: #555;
+            font-size: 16px;
+        }
+    </style>
+    <script type="module">
+        import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+    </script>
+</head>
+<body>
+    <h1>Demonstração de Habilidade em Backend</h1>
+    <button id="runBackend">Executar Simulação de Backend</button>
+    <div id="output">
+        Clique no botão para ver os resultados da simulação de backend.
+    </div>
+    <button id="goHome">Voltar para a Página Inicial</button>
+
+    <script type="module">
+        import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
+        const runBackendButton = document.getElementById('runBackend');
+        const outputDiv = document.getElementById('output');
+        const goHomeButton = document.getElementById('goHome');
+
+        runBackendButton.addEventListener('click', async () => {
+            outputDiv.textContent = "Executando simulação de backend...";
+
+            const simulatedData = {
+                uuid: uuidv4(),
+                timestamp: new Date().toISOString(),
+                randomNumber: Math.floor(Math.random() * 100)
+            };
+
+            outputDiv.textContent = `
+                Simulação de Backend Completa!
+                UUID Gerado: ${simulatedData.uuid}
+                Timestamp: ${simulatedData.timestamp}
+                Número Aleatório: ${simulatedData.randomNumber}
+            `;
+        });
+
+        goHomeButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        async function simulateBackendProcessing() {
+            await delay(1000);
+            await delay(500);
+            return simulatedData;
+        }
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+    </script>
+    <style>
+        #goHome {
+            margin-top: 200px;
+        }
+    </style>
+</body>
+</html>

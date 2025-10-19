@@ -1,0 +1,10 @@
+O projeto está pronto. 
+
+
+Arquivos principais:
+
+index_eventos.html (página inicial)
+admin.php (painel admin, login: admin/admin123)
+sql/full_project_database.sql (export do banco)
+README.md (documentação completa)
+Para acessar: http://localhost/portifolio2025/index_eventos.html

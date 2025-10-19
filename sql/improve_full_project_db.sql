@@ -1,0 +1,26 @@
+USE project_full_db;
+
+-- Add updated_at columns to tables
+ALTER TABLE users
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE events
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE tickets
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE customers
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE sales
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+-- Add indexes on foreign keys for performance
+ALTER TABLE tickets ADD INDEX idx_event_id (event_id);
+
+ALTER TABLE sales
+ADD INDEX idx_ticket_id (ticket_id),
+ADD INDEX idx_customer_id (customer_id);
+
+ALTER TABLE password_resets ADD INDEX idx_user_id (user_id);

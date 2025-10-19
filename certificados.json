@@ -1,0 +1,19 @@
+{
+    "certificados": [
+        {
+            "titulo": "Certificado de HTML e CSS",
+            "descricao": "Certificado obtido após completar o curso de HTML e CSS.",
+            "arquivo": "Kauai-Lucas-Rocha-Bozoli-Quinup-HTML5-40-Horas-Certificado-Curso-em-Video.pdf"
+        },
+        {
+            "titulo": "Certificado de JavaScript",
+            "descricao": "Certificado obtido após completar o curso de JavaScript.",
+            "arquivo": "certificados/certificado_javascript.pdf"
+        },
+        {
+            "titulo": "Certificado de React",
+            "descricao": "Certificado obtido após completar o curso de React.",
+            "arquivo": "certificados/certificado_react.pdf"
+        }
+    ]
+}
